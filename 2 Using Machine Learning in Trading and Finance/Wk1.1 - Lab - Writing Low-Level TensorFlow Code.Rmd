@@ -1,0 +1,126 @@
+Writing Low-Level TensorFlow Code
+2 hours
+Free
+Overview
+Duration is 1 min
+
+In this lab, you will start by reviewing the main operations on tensors in TensorFlow and understand how to manipulate TensorFlow variables.
+
+Then you will move to the problem of training a linear regressor from the beginning with gradient descent. The first step is to understand how to compute the gradients of a function with respect to some of its arguments. The TensorFlow construct that allows you to do that is tf.GradientTape, which will be described.
+
+Finally, you will create a simple training loop to learn the weights of a 1-dim linear regressor using synthetic data generated from a linear model.
+
+As a bonus exercise, you will be able to do the same for data generated from a non-linear model. This will require you to manually engineer non-linear features to improve your linear model performance.
+
+What you learn
+In this lab, you will:
+
+Practice defining and performing basic operations on constant tensors.
+
+Use Tensorflow's automatic differentiation capability.
+
+Learn how to train a linear regression from the beginning with TensorFLow.
+
+Setup
+For each lab, you get a new Google Cloud project and set of resources for a fixed time at no cost.
+
+Make sure you signed into Qwiklabs using an incognito window.
+
+Note the lab's access time (for example, img/time.png and make sure you can finish in that time block.
+
+There is no pause feature. You can restart if needed, but you have to start at the beginning.
+
+When ready, click img/start_lab.png.
+
+Note your lab credentials. You will use them to sign in to the Google Cloud Console. img/open_google_console.png
+
+Click Open Google Console.
+
+Click Use another account and copy/paste credentials for this lab into the prompts.
+
+If you use other credentials, you'll get errors or incur charges.
+
+Accept the terms and skip the recovery resource page.
+Do not click End Lab unless you are finished with the lab or want to restart it. This clears your work and removes the project.
+
+Launch AI Platform Notebooks
+To launch AI Platform Notebooks:
+
+Step 1
+
+Click on the Navigation Menu. Navigate to AI Platform, then to Notebooks.
+
+Open new notebook
+
+Step 2
+
+On the Notebook instances page, click NEW INSTANCE. Select TensorFlow Enterprise and choose the latest version of TensorFlow Enterprise 2.5 > Without GPUs.
+
+TF2.5
+
+In the pop-up, confirm the name of the deep learning VM, move to the bottom of the window and click Create.
+
+Create new VM
+
+The new VM will take 2-3 minutes to start.
+
+Step 3
+
+Click Open JupyterLab. A JupyterLab window will open in a new tab.
+
+JupyterLab
+
+Clone course repo within your AI Platform Notebooks instance
+To clone the training-data-analyst notebook in your JupyterLab instance:
+
+Step 1
+
+In JupyterLab, click the Terminal icon to open a new terminal.
+
+Open Terminal
+
+Step 2
+
+At the command-line prompt, type in the following command and press Enter.
+
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+Step 3
+
+Confirm that you have cloned the repository by double clicking on the training-data-analyst directory and ensuring that you can see its contents. The files for all the Jupyter notebook-based labs throughout this course are available in this directory.
+
+Training data analyst repository
+
+Writing low-level TensorFlow code
+Duration is 30 min
+
+Step 1
+
+In the notebook interface, navigate to training-data-analyst > courses > machine_learning > deepdive2 > introduction_to_tensorflow > labs, and open write_low_level_code.ipynb.
+
+Step 2
+
+In the notebook interface, click Edit > Clear All Outputs.
+
+Carefully read through the notebook instructions and fill in lines marked with #TODO where you need to complete the code as needed.
+
+Tip: To run the current cell, click the cell and press SHIFT + ENTER. Other cell commands are listed in the notebook UI under Run.
+
+Hints may also be provided for the tasks to guide you along. Highlight the text to read the hints (they are in white text).
+If you need more help, to look at the complete solution, navigate to training-data-analyst > courses > machine_learning > deepdive2 > introduction_to_tensorflow > solutions and open write_low_level_code.ipynb.
+End your lab
+When you have completed your lab, click End Lab. Qwiklabs removes the resources you’ve used and cleans the account for you.
+
+You will be given an opportunity to rate the lab experience. Select the applicable number of stars, type a comment, and then click Submit.
+
+The number of stars indicates the following:
+
+1 star = Very dissatisfied
+2 stars = Dissatisfied
+3 stars = Neutral
+4 stars = Satisfied
+5 stars = Very satisfied
+You can close the dialog box if you don't want to provide feedback.
+
+For feedback, suggestions, or corrections, please use the Support tab.
+
+©2021 Google LLC All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.
