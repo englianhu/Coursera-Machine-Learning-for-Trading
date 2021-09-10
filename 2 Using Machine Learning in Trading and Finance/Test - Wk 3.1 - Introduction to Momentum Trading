@@ -1,0 +1,29 @@
+
+
+You can choose two moving average window lengths so that the crossovers will most closely match the optimal buy and sell points in your historical data. What is the weakness of this strategy?
+
+- You may end up with non-standard window lengths that are not widely used.
+
+- You end up using arbitrary window lengths to fit your data.
+
+✔ It is better to use a single moving average and choose the window length to create the crossover points that most closely match the optimal buy and sell points.
+
+正解
+This is a big weakness. Anyone can create a strategy that maximizes profit on a historical data set. The problem is that the strategy is only effective for the historical data and fails to perform well with unseen data. This is an example of overfitting your strategy.
+
+------
+
+Which of the following are advantages of using moving average ribbons instead of selecting two moving average window lengths to identify buy and sell signals?
+
+✔ You avoid overfitting your data with specific moving average window lengths.
+
+正解
+Yes, by using a moving average ribbon, your strategy will be based on a whole range of window lengths which will help you avoid overfitting your strategy to two or three specific window lengths.
+
+- Using a moving average ribbon will give you many more buy and sell signals than using two moving average windows
+
+✔ By looking at the entire "shape" of the ribbon rather than two specific window lengths, you can get a better quality trading signal.
+
+正解
+Yes, you can rank all of the moving averages and create a normalized score that should give you an improved trade signal.
+
