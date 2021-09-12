@@ -1,5 +1,5 @@
 ---
-title: "<img src='figure/coursera.jpg' width='37'> <img src='figure/ucsc.png' width='240'>"
+title: "<img src='figure/coursera.jpg' width='37'> <img src='figure/NYIF.jpeg' width='240'>"
 subtitle: "<span style='color:white; background-color:#4E79A7;'>Bayesian Statistics: Mixture Models</span> (Assessment Week 5 with Codes)"
 author: "[®γσ, Lian Hu](https://englianhu.github.io/) <img src='figure/quantitative trader 1.jpg' width='12'> <img src='figure/ENG.jpg' width='24'> ®"
 date: "`r lubridate::today('Asia/Tokyo')`"
@@ -155,7 +155,7 @@ At the end of the course you will be able to do the following:
 
 #### Wk 1.1.2 : Understand Quantitative Trading Strategies
 
-##### Wk 1.1.2.1 : 動画テスト - Basic Trading Strategy Entries and Exits Endogenous Exogenous
+##### Wk 1.1.2.1 : 動画中のテスト : Basic Trading Strategy Entries and Exits Endogenous Exogenous
 
 質問 1 : If you are long an asset (or instrument), what are some examples of pre-planned risk management?
 
@@ -201,7 +201,7 @@ This is a combination of and endogenous rule based on Microsoft's trading volume
 > **これを選択しないでください**
 This is a combination of two exogenous rules, one based on Apple's fundamental data and one based on Microsoft's fundamental data.
 
-##### Wk 1.1.2.2 : 動画テスト - Basic Trading Strategy Building a Trading Model
+##### Wk 1.1.2.2 : 動画中のテスト : Basic Trading Strategy Building a Trading Model
 
 質問 1 : You have sold short Amazon at 1,800 and have a 50 basis point profit objective, Which order should you place for your profit exit?
 
@@ -213,7 +213,7 @@ This is a combination of two exogenous rules, one based on Apple's fundamental d
 > **正解**
 This would be a profit exit as you have sold Amazon short at 1,800 and bought it back at 1,710 for a profit of 90 or 0.5%
 
-##### Wk 1.1.2.3 : 動画テスト - Advanced Concepts in Trading Strategies
+##### Wk 1.1.2.3 : 動画中のテスト : Advanced Concepts in Trading Strategies
 
 質問 1 : If you sell MSFT at 150  and have a profit objective of 500 basis points and a loss tolerance of 200 basis points what exit orders should you place?
 
@@ -255,7 +255,7 @@ During the next 5 days the trading range for MSFT is 154 to 164. At the end of t
 > **正解**
 Yes, these would the exit orders based on a variable dynamic stop loss where the stop-loss level trails the lowest price achieved by MSFT during the period and the stop-loss margin is reduced by 50% of the unrealized profit. The stop-loss level for a dynamic stop loss would be 154 * 1.03 = 158.62.  As you are using a variable dynamic stop loss, and your short position has an unrealized profit of 160 - 154 = \$6, you need to reduce the stop-loss margin by 50% of this amount or \$3. Your stop loss should be set at 158.62 - 3 = 155.62.
 
-##### Wk 1.1.2.4 : テスト - Understand Quantitative Strategies
+##### Wk 1.1.2.4 : テスト : Understand Quantitative Strategies
 
 **Understand Quantitative Strategies (合計点数 4)**
 
@@ -450,7 +450,7 @@ By opening the tool, you are agreeing to Qwiklabs' [Terms of Service](https://qw
 
 #### Wk 3.1.1 : Identify momentum-based factors
 
-##### Wk 3.1.1.1 : 動画テスト - Introduction to Momentum Trading
+##### Wk 3.1.1.1 : 動画中のテスト : Introduction to Momentum Trading
 
 質問 1 : You can choose two moving average window lengths so that the crossovers will most closely match the optimal buy and sell points in your historical data. What is the weakness of this strategy?
 
@@ -484,14 +484,85 @@ Yes, you can rank all of the moving averages and create a normalized score that 
 ##### Wk 3.1.1.3 : 学習用教材 : Hurst Exponent and Trading Signals Derived from Market Time Series
 
 Hurst Exponent and Trading Signals Derived from Market Time Series
-If you would like to explore the Hurst coefficient as a trading signal, please have a look at “[Hurst Exponent and Trading Signals Derived from Market Time Series](https://www.scitepress.org/papers/2018/66670/66670.pdf)” by Petr Kroha and Miroslav Skoula (2018). They give a good survey of the theory behind Hurst and also create a “Moving Hurst” trading signal that they test against an MACD signal on NASDAQ and DAX data. They conclude that Moving Hurst is a better trade signal than MACD, but that it fails to make a profit when trading costs are factored in.
+If you would like to explore the Hurst coefficient as a trading signal, please have a look at “[Hurst Exponent and Trading Signals Derived from Market Time Series](https://raw.githubusercontent.com/englianhu/Coursera-Machine-Learning-for-Trading/090acd0b5db6961655c0172cd766e43419a0341f/2%20Using%20Machine%20Learning%20in%20Trading%20and%20Finance/reference/Hurst%20Exponent%20and%20Trading%20Signals%20Derived%20from%20Market%20Time%20Series.pdf)([origin](https://www.scitepress.org/papers/2018/66670/66670.pdf))” by *Petr Kroha and Miroslav Skoula (2018)*. They give a good survey of the theory behind Hurst and also create a “Moving Hurst” trading signal that they test against an MACD signal on NASDAQ and DAX data. They conclude that Moving Hurst is a better trade signal than MACD, but that it fails to make a profit when trading costs are factored in.
 
 #### Wk 3.1.2 : Build a trading model that uses momentum factors
 
+##### Wk 3.1.2.9 : ディスカッションのプロンプト : Compare interpretability versus explanatory power of the momentum factor
 
-##### Wk 3.1.1.3 : 動画テスト - 
+**Compare interpretability versus explanatory power of the momentum factor**
 
+返答が投稿されました。以下より他の受講生と交流して議論しましょう！
 
+> Interpretability is about the extent to which a cause and effect can be observed within a system. Or, to put it another way, it is the extent to which you are able to predict what is going to happen, given a change in input or algorithmic parameters. It’s being able to look at an algorithm and go yep, I can see what’s happening here.
+> 
+Explainability, meanwhile, is the extent to which the internal mechanics of a machine or deep learning system can be explained in human terms. It’s easy to miss the subtle difference with interpretability, but consider it like this: interpretability is about being able to discern the mechanics without necessarily knowing why. Explainability is being able to quite literally explain what is happening.
+
+##### Wk 3.1.2.11 : Lab: Momentum Strategies
+
+**Lab: Momentum Strategies**
+
+Momentum trading strategies, based on concepts from physics, attempt to take advantage of stocks' tendencies to continue going either up or down, independent of daily fluctuations. Contrarily, mean-reversion strategies are based on trends reversing direction.
+
+In this lab, you'll apply some of the concepts you have learned behind momentum trading and mean reversion by leveraging the [Auquan Toolbox](https://github.com/Auquan/auquan-toolbox-python), a Python library that provides tools for developing trading algorithms. When building trading strategies you'll rarely start from scratch. In this lab you'll be given code of a trading strategy implementation that loses money. Your job will be to modify the code so that the strategy makes money.
+
+**Tips for Course Labs**
+Get the most out of Coursera and Qwiklabs by trying our tips below.
+
+**Avoid account confusion with private browsing**
+**Close this page and log back in to Coursera in Incognito mode** before moving on. When you return to this course and lab instructions page, click Open Tool to continue.
+
+By using incognito mode, this ensures that you don't accidentally use your own Google account (including Gmail) while accessing the Google Cloud Console. This also prevents Qwiklabs from logging you out of your own Google accounts.
+
+Detailed instructions for using Incognito mode in Google Chrome are [available here](https://support.google.com/chrome/answer/95464?co=GENIE.Platform%3DDesktop&hl=en). Depending on your browser, Incognito mode might also be called Private Browsing or InPrivate Browsing.
+
+To ensure lab completion is marked in Coursera:
+
+1. Access each individual lab by clicking **Open Tool** in Coursera:
+
+2. Complete the lab in Qwiklabs.
+
+3. Click **End Lab** in Qwiklabs (click this only after you are ready to end the lab)
+
+4. Close the Qwiklabs browser window or tab.
+
+If you experience any issues and need support, [submit a request](https://goo.gl/LdYwdN) here.
+
+By opening the tool, you are agreeing to Qwiklabs' [Terms of Service](https://qwiklabs.com/terms_of_service).
+
+##### Wk 3.1.2.13 : Optional Lab: Improve Momentum Trading strategies using Hurst
+
+**Optional Lab: Improve Momentum Trading strategies using Hurst**
+
+In this lab, you will:
+
+Understand how the barebones momentum version is working and make yourself comfortable with it
+
+Use the Hurst exponent to create a money making strategy
+
+Tips for Course Labs
+Get the most out of Coursera and Qwiklabs by trying our tips below.
+
+Avoid account confusion with private browsing
+Close this page and log back in to Coursera in Incognito mode before moving on. When you return to this course and lab instructions page, click Open Tool to continue.
+
+By using incognito mode, this ensures that you don't accidentally use your own Google account (including Gmail) while accessing the Google Cloud Console. This also prevents Qwiklabs from logging you out of your own Google accounts.
+
+Detailed instructions for using Incognito mode in Google Chrome are [available here](https://support.google.com/chrome/answer/95464?co=GENIE.Platform%3DDesktop&hl=en). Depending on your browser, Incognito mode might also be called Private Browsing or InPrivate Browsing.
+
+To ensure lab completion is marked in Coursera:
+
+1. Access each individual lab by clicking **Open Tool** in Coursera:
+
+2. Complete the lab in Qwiklabs.
+
+3. Click **End Lab** in Qwiklabs (click this only after you are ready to end the lab)
+
+4. Close the Qwiklabs browser window or tab.
+
+If you experience any issues and need support, [submit a request](https://goo.gl/LdYwdN) here.
+
+By opening the tool, you are agreeing to Qwiklabs' [Terms of Service](https://qwiklabs.com/terms_of_service).
 
 <br><br>
 
