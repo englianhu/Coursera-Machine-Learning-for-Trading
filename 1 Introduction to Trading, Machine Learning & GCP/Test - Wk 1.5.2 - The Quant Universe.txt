@@ -1,0 +1,13 @@
+Please select the statements that are true.
+
+
+✔️High-frequency trading is a type of algorithmic trading
+
+正解
+Yes, high frequency trading is a subset of algorithmic trading with order generation and executions occurring at the millisecond level.
+
+
+Quantitative trading, algorithmic trading and high frequency trading  are a small part of trading volume in today's markets. 
+
+これを選択しないでください
+No, these trading methods comprise almost 90% of the volume in markets.

@@ -1,0 +1,19 @@
+We have been talking about correlation and cointegration. Please select the statements below that are correct
+
+
+- Cointegration is the same as correlation except that cointegration is the correlation of the means of two price series.
+
+これを選択しないでください
+Cointegration indicates that the difference between the means of two price series is stationary (reverts to a long-term mean). A cointegrated series series can also be correlated but this is not required. Also, the mean of a price series is a single number, so the means of two price series cannot be correlated. All we can measure is their difference.  
+
+
+- Cointegration and correlation both imply that the two price series are stationary.
+
+これを選択しないでください
+Only cointegration implies stationarity of the difference between the means of each price series. Two series may be correlated but not stationary.
+
+
+✔️Cointegration indicates that the difference between the means of two price series is stationary. Correlation implies that the returns from two prices series are related, either positively or negatively.
+
+正解
+Cointegration indicates that the difference between the means of two price series is stationary (reverts to a long-term mean). A cointegrated series series can also be correlated but this is not required. Correlation indicates that a price series has some relationship with another price series. This relationship can be very strong in the case of perfect positive (+1) or negative (-1) correlation or non-existent in the case of zero correlation.

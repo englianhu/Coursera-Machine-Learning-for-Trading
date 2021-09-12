@@ -1,0 +1,19 @@
+Order execution strategies are used by both portfolio managers and quant traders. What is the objective of this type of strategy?
+
+
+Break up large orders into smaller orders to minimize brokerage costs and exchange fees. 
+
+これを選択しないでください
+This would actually increase the fixed portion of brokerage costs and exchange fees. 
+
+
+✔️Minimize market impact costs.
+
+正解
+Market impact costs are are important for large orders as there is usually  insufficient liquidity to fill orders at the current bid or ask price.  These orders tend to get filled at worse prices as market makers lower their bids and raise their ask prices in response to a large order being shown all at once.
+
+
+✔️Preserve privacy of strategy as long as possible. 
+
+正解
+Trading firms want to keep their strategies secret from other market participants.  Breaking up orders can "camouflage" a strategy so it is harder for other traders to detect.

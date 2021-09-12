@@ -129,7 +129,13 @@ rm(pkgs)
 
 # Tutorial
 
-## Wk 1.2 : Welcome to Using Machine Learning in Trading and Finance
+## Wk 1
+
+### Wk 1.1 : Introduction to Quantitative Trading and TensorFlow
+
+#### Wk 1.1.1 : Introduction to TensorFlow, Trading, ML
+
+##### Wk 1.1.1.2 : 学習用教材 : Welcome to Using Machine Learning in Trading and Finance
 
 > **Welcome to Using Machine Learning in Trading and Finance**
 We designed this course for finance, investment management and trading professionals. Machine learning and data science professionals who are interested in applying their skills to developing trading strategies can also benefit from this course. For those of you who are new to trading and investing,  we give a brief introduction to these areas at the beginning of Course 1 : Introduction to Trading, Machine Learning and GCP. It would be helpful to have a basic understanding of financial markets (equities, bonds, derivatives, market structure, and hedging. 
@@ -147,9 +153,200 @@ At the end of the course you will be able to do the following:
 - Build a momentum-based trading model and back test it
 - Finally, please feel free to post any questions or comments in the [discussion forums](https://www.coursera.org/learn/introduction-trading-machine-learning-gcp/discussions).
 
-## Wk 1.2.4 : テスト - Understand Quantitative Strategies
+#### Wk 1.1.2 : Understand Quantitative Trading Strategies
 
-## Wk 1.3.7 : Lab: Writing low-level TensorFlow Programs
+##### Wk 1.1.2.1 : 動画テスト - Basic Trading Strategy Entries and Exits Endogenous Exogenous
+
+質問 1 : If you are long an asset (or instrument), what are some examples of pre-planned risk management?
+
+<span style='color:green'>✔️ A sell order above the current market price</span>
+
+> **正解**
+This would automatically take a profit on your holding if the market trades higher and would also reduce (or eliminate) your long exposure which would reduce your risk. This is a trade "exit" which we will talk about later.
+
+- A buy order above the current market price
+
+> **これを選択しないでください**
+This would add to your long position and increase your risk exposure. This is not risk management but could be part of a momentum strategy which we will talk about in later session.
+
+<span style='color:green'>✔️ A sell order below the current market price</span>
+
+> **正解**
+This is a stop-loss order that would limit your losses on your long position in the market trades lower. We will talk about different types of stop losses later.
+
+- A buy order below the current market price
+
+> **これを選択しないでください**
+This would increase your risk exposure when you are already taking a loss on your current long position. this is an example of a trade "entry" which we will talk about later.
+
+2. Which of the following are examples of a combination of endogenous and exogenous trading rules
+
+- Sell Microsoft if the closing price is below the daily average and the volume traded is higher than the previous day's volume
+
+> **これを選択しないでください**
+This is a combination of two endogenous rules as both are based on Microsoft's price and volume traded.
+
+<span style='color:green'>✔️ Sell Microsoft if the closing price is below the daily average and the closing price of SPY (S&P 500 ETF) is also below its daily average.</span>
+
+> **正解**
+This is a combination of and endogenous rule based on Microsoft's closing price and an exogenous rule based on SPY's closing price.
+
+<span style='color:green'>✔️ Sell Microsoft if trading volume is lower than the previous day and the unemployment rate increased during the previous month.</span>
+
+> **正解**
+This is a combination of and endogenous rule based on Microsoft's trading volume and an exogenous rule based on the level of a macroeconomic variable.
+
+- Buy Apple if reported quarterly profits are up and Microsoft's reported quarterly sales are down.
+
+> **これを選択しないでください**
+This is a combination of two exogenous rules, one based on Apple's fundamental data and one based on Microsoft's fundamental data.
+
+##### Wk 1.1.2.2 : 動画テスト - Basic Trading Strategy Building a Trading Model
+
+質問 1 : You have sold short Amazon at 1,800 and have a 50 basis point profit objective, Which order should you place for your profit exit?
+
+- Buy Amazon at 1,890
+- Sell Amazon at 1,890
+- Buy Amazon at 1,710
+<span style='color:green'>✔️ Sell Amazon at 1,710</span>
+
+> **正解**
+This would be a profit exit as you have sold Amazon short at 1,800 and bought it back at 1,710 for a profit of 90 or 0.5%
+
+##### Wk 1.1.2.3 : 動画テスト - Advanced Concepts in Trading Strategies
+
+質問 1 : If you sell MSFT at 150  and have a profit objective of 500 basis points and a loss tolerance of 200 basis points what exit orders should you place?
+
+- Buy MSFT at 147 and buy MSFT at 157.5
+- Sell MSFT at 147 and sell MSFT at 157.5
+- Buy MSFT at 142.5 and buy MSFT at 153
+<span style='color:green'>✔️ Buy MSFT at 147 and buy MSFT at 153</span>
+
+> **正解**
+This would be a profit objective 500 basis points (as selling MSFT at 150 and buying it back at 142.5 would give you a profit of 7.5 or 5%) and a loss tolerance of 200 basis points (as selling MSFT at 150 and buying it back at 153 would give you a loss of 3 or 2%.
+
+質問 2 : You are trading Alphabet (GOOG) and have entered with a buy of 1000 shares at $1100. You have a profit target of 400 basis points and a dynamic stop-loss initially set at 200 basis points below your entry point. During the next week the trading range for GOOG is 1080 to 1130.  At the end of the week the price of GOOG is 1110 and your trade is still open. What exit orders do you currently have in the market?
+
+- Stop-loss order to sell GOOG at 1078 and a limit order to sell GOOG at 1144.
+
+- Stop-loss order to sell GOOG at 1107.40 and a limit order to sell GOOG at 1175.2.
+
+- Stop-loss order to sell GOOG at 1107.40 and a limit order to sell GOOG at 1144.
+
+<span style='color:green'>✔️ Stop-loss order to sell GOOG at 1100 and a limit order to sell GOOG at 1144</span>
+
+> **正解**
+Yes. You correctly adjusted your dynamic stop-loss order so that it is 200 basis points below the maximum price of GOOG during the week, and you kept your profit exit order at its original level of 4% above your entry point of 1100.
+
+質問 3 : You are trading Microsoft (MSFT) and have shorted 1,000 shares at $160. You have a profit target of 500 basis points and a variable dynamic stop-loss initially set at 300 basis points above your entry point.
+
+Your risk management strategy is to reduce the size of your stop-loss margin by 50% of your unrealized profit ( on your MSFT short position and to have the stop-loss level adjust to the current MSFT price if your trade has an unrealized profit. If your trade has an unrealized loss the stop-loss level stays at the original level
+
+During the next 5 days the trading range for MSFT is 154 to 164. At the end of the week the price of MSFT is 154 and your trade is still open. What exit orders do you currently have in the market?
+
+- Stop-loss order to buy MSFT at 161.62 and a limit order to buy back MSFT at 152.
+
+- Stop-loss order to buy MSFT at 158.62 and a limit order to buy back MSFT at 152.
+
+- Stop-loss order to buy MSFT at 164.80 and a limit order to buy back MSFT at 152.
+
+<span style='color:green'>✔️ Stop-loss order to buy MSFT at 155.62 and a limit order to buy back MSFT at 152.</span>
+
+> **正解**
+Yes, these would the exit orders based on a variable dynamic stop loss where the stop-loss level trails the lowest price achieved by MSFT during the period and the stop-loss margin is reduced by 50% of the unrealized profit. The stop-loss level for a dynamic stop loss would be 154 * 1.03 = 158.62.  As you are using a variable dynamic stop loss, and your short position has an unrealized profit of 160 - 154 = \$6, you need to reduce the stop-loss margin by 50% of this amount or \$3. Your stop loss should be set at 158.62 - 3 = 155.62.
+
+##### Wk 1.1.2.4 : テスト - Understand Quantitative Strategies
+
+**Understand Quantitative Strategies (合計点数 4)**
+
+質問 1 : If you believe that the price and volume history of an asset are all that is needed to design a trading strategy then you would would use an endogenous trading rule. What is the theoretical justification for using this type of strategy? (1点)
+
+- Markets are efficient and fully incorporate all available information (both public and private).
+
+- Asset prices follow a random walk with equal probabilities of increasing and decreasing
+
+<span style='color:green'>✔️ Asset and market prices tend to have momentum so that stocks whose prices are in an up trends tend to increase in value and those in a downtrend tend to decrease in value.</span>
+
+> 正解
+Yes, if you believe that asset prices have momentum then price and volume data is all you need to make predictions of future prices.
+
+<span style='color:green'>✔️ Fundamental data such as historic earning and sales growth are already fully reflected in the current market price and so have no predictive power.</span>
+
+> 正解
+Yes, if you instead believed that fundamental data have predictive value, then you should incorporate them into an exogenous trading rule.
+
+
+質問 2 : The basic trading model parameters are entry signal, profit exit, stop-loss and time-out. How can you use these parameters and machine learning to optimize your trading strategy? (1点)
+
+- Vary the the type of entry signal and profit exit levels in backtesting with the objective of maximizing profit.
+
+<span style='color:green'>✔️ Vary the the type of entry signal, profit exit levels,  stop loss levels and trade completion time limits in backtesting with the objective of maximizing risk adjusted return (Sharpe ratio) within your tolerance for PnL volatility and maximum drawdown.</span>
+
+> 正解
+Yes, Sharpe ratio maximization leads to an optimal trading strategy as long as it is constrained by time limits, PnL volatility limits and maximum drawdown tolerance. This will give you a strategy with stop-loss levels that can be tolerated when you implement it in  live trading.
+
+- Vary the the type of entry signal and profit exit levels in backtesting with the objective of maximizing risk adjusted return (Sharpe ratio).
+
+
+質問 3 : The main benefit of a dynamic stop loss over a static stop loss is that: (1点)
+
+<span style='color:green'>✔️ Dynamic stop losses reduce the expected risk of your strategy.</span>
+
+> 正解
+Yes. Dynamic stop losses, which maintain a fixed margin between the stop-loss level and the most favorable market price achieved, can reduce the maximum loss in a strategy (at worst the maximum loss is unaffected). This reduces the expected risk in the strategy but also make it more likely that you will be stopped out rather than profited out. This can have a negative impact on your expected return from a strategy.
+
+- Dynamic stop losses increase your expected returns from a trading strategy.
+
+- Dynamic stop losses guarantee that your strategy will not make a loss even if it is stopped out.
+
+質問 4 : Endogenous trading rules are often created by: (1点)
+
+<span style='color:green'>✔️ Technical analysts</span>
+
+> 正解
+Yes, Technical analysts or chartists believe that all of the information necessary to create a trading rule or strategy is contained in the price and volume history of an asset. 
+
+- Statistical arbitrage traders
+- Strategists
+- Quantitative trading groups
+
+### Wk 1.2 : Introduction to TensorFlow
+
+#### Wk 1.2.1 : Introduction to TensorFlow
+
+##### Wk 1.2.1.7 : Lab: Writing low-level TensorFlow Programs
+
+**Lab: Writing low-level TensorFlow Programs**
+
+In this lab, you will create a machine learning model using the TensorFlow Estimator class and evaluate its performance.
+
+**Tips for Course Labs**
+Get the most out of Coursera and Qwiklabs by trying our tips below.
+
+**Avoid account confusion with private browsing**
+**Close this page and log back in to Coursera in Incognito mode** before moving on. When you return to this course and lab instructions page, click Open Tool to continue.
+
+By using incognito mode, this ensures that you don't accidentally use your own Google account (including Gmail) while accessing the Google Cloud Console. This also prevents Qwiklabs from logging you out of your own Google accounts.
+
+Detailed instructions for using Incognito mode in Google Chrome are [available here](https://support.google.com/chrome/answer/95464?co=GENIE.Platform%3DDesktop&hl=en). Depending on your browser, Incognito mode might also be called Private Browsing or InPrivate Browsing.
+
+To ensure lab completion is marked in Coursera:
+
+1. Access each individual lab by clicking **Open Tool** in Coursera:
+
+2. Complete the lab in Qwiklabs.
+
+3. Click **End Lab** in Qwiklabs (click this only after you are ready to end the lab)
+
+4. Close the Qwiklabs browser window or tab.
+
+If you experience any issues and need support, [submit a request](https://goo.gl/LdYwdN) here.
+
+By opening the tool, you are agreeing to Qwiklabs' [Terms of Service)[https://qwiklabs.com/terms_of_service].
+
+##### Wk 1.2.1.13 : Lab: Manipulating data with TensorFlow Dataset API
+
+**Lab: Manipulating data with TensorFlow Dataset API**
 
 In this lab, you will create a machine learning model using the TensorFlow Estimator class and evaluate its performance.
 
@@ -161,20 +358,140 @@ Close this page and log back in to Coursera in Incognito mode before moving on. 
 
 By using incognito mode, this ensures that you don't accidentally use your own Google account (including Gmail) while accessing the Google Cloud Console. This also prevents Qwiklabs from logging you out of your own Google accounts.
 
-Detailed instructions for using Incognito mode in Google Chrome are available here. Depending on your browser, Incognito mode might also be called Private Browsing or InPrivate Browsing.
+Detailed instructions for using Incognito mode in Google Chrome are [available here](https://support.google.com/chrome/answer/95464?co=GENIE.Platform%3DDesktop&hl=en). Depending on your browser, Incognito mode might also be called Private Browsing or InPrivate Browsing.
 
 To ensure lab completion is marked in Coursera:
-1. Access each individual lab by clicking Open Tool in Coursera:
+
+1. Access each individual lab by clicking **Open Tool** in Coursera:
 
 2. Complete the lab in Qwiklabs.
 
-3. Click End Lab in Qwiklabs (click this only after you are ready to end the lab)
+3. Click **End Lab** in Qwiklabs (click this only after you are ready to end the lab)
 
 4. Close the Qwiklabs browser window or tab.
 
-If you experience any issues and need support, submit a request here.
+If you experience any issues and need support, [submit a request](https://goo.gl/LdYwdN) here.
 
-By opening the tool, you are agreeing to Qwiklabs' Terms of Service.
+By opening the tool, you are agreeing to Qwiklabs' [Terms of Service](https://qwiklabs.com/terms_of_service).
+
+<br>
+
+## Wk 2
+
+### Wk 2.1 : Training neural networks with Tensorflow 2 and Keras
+
+#### Wk 2.1.1 : Overview of Neural Networks and Introduction to Keras APIs
+
+##### Wk 2.1.1.7 : Lab: Introducing the Keras Sequential API
+
+**Lab: Introducing the Keras Sequential API**
+
+In this lab, you will create a machine learning model using the TensorFlow Estimator class and evaluate its performance.
+
+**Tips for Course Labs**
+Get the most out of Coursera and Qwiklabs by trying our tips below.
+
+**Avoid account confusion with private browsing**
+**Close this page and log back in to Coursera in Incognito mode** before moving on. When you return to this course and lab instructions page, click Open Tool to continue.
+
+By using incognito mode, this ensures that you don't accidentally use your own Google account (including Gmail) while accessing the Google Cloud Console. This also prevents Qwiklabs from logging you out of your own Google accounts.
+
+Detailed instructions for using Incognito mode in Google Chrome are [available here](https://support.google.com/chrome/answer/95464?co=GENIE.Platform%3DDesktop&hl=en). Depending on your browser, Incognito mode might also be called Private Browsing or InPrivate Browsing.
+
+To ensure lab completion is marked in Coursera:
+
+1. Access each individual lab by clicking **Open Tool** in Coursera:
+
+2. Complete the lab in Qwiklabs.
+
+3. Click **End Lab** in Qwiklabs (click this only after you are ready to end the lab)
+
+4. Close the Qwiklabs browser window or tab.
+
+If you experience any issues and need support, [submit a request](https://goo.gl/LdYwdN) here.
+
+By opening the tool, you are agreeing to Qwiklabs' [Terms of Service](https://qwiklabs.com/terms_of_service).
+
+##### Wk 2.1.1.13 : Lab: Introducing the Keras Functional API
+
+**Lab: Introducing the Keras Functional API**
+
+In this lab, you will create a machine learning model using the TensorFlow Estimator class and evaluate its performance.
+
+**Tips for Course Labs**
+Get the most out of Coursera and Qwiklabs by trying our tips below.
+
+**Avoid account confusion with private browsing**
+**Close this page and log back in to Coursera in Incognito mode** before moving on. When you return to this course and lab instructions page, click Open Tool to continue.
+
+By using incognito mode, this ensures that you don't accidentally use your own Google account (including Gmail) while accessing the Google Cloud Console. This also prevents Qwiklabs from logging you out of your own Google accounts.
+
+Detailed instructions for using Incognito mode in Google Chrome are [available here](https://support.google.com/chrome/answer/95464?co=GENIE.Platform%3DDesktop&hl=en). Depending on your browser, Incognito mode might also be called Private Browsing or InPrivate Browsing.
+
+To ensure lab completion is marked in Coursera:
+
+1. Access each individual lab by clicking **Open Tool** in Coursera:
+
+2. Complete the lab in Qwiklabs.
+
+3. Click **End Lab** in Qwiklabs (click this only after you are ready to end the lab)
+
+4. Close the Qwiklabs browser window or tab.
+
+If you experience any issues and need support, [submit a request](https://goo.gl/LdYwdN) here.
+
+By opening the tool, you are agreeing to Qwiklabs' [Terms of Service](https://qwiklabs.com/terms_of_service).
+
+<br>
+
+## Wk 3
+
+### Wk 3.1 : Build a Momentum-based Trading System
+
+#### Wk 3.1.1 : Identify momentum-based factors
+
+##### Wk 3.1.1.1 : 動画テスト - Introduction to Momentum Trading
+
+質問 1 : You can choose two moving average window lengths so that the crossovers will most closely match the optimal buy and sell points in your historical data. What is the weakness of this strategy?
+
+- You may end up with non-standard window lengths that are not widely used.
+
+- You end up using arbitrary window lengths to fit your data.
+
+<span style='color:green'>✔️ It is better to use a single moving average and choose the window length to create the crossover points that most closely match the optimal buy and sell points.</span>
+
+> **正解**
+This is a big weakness. Anyone can create a strategy that maximizes profit on a historical data set. The problem is that the strategy is only effective for the historical data and fails to perform well with unseen data. This is an example of overfitting your strategy.
+
+質問 2 : Which of the following are advantages of using moving average ribbons instead of selecting two moving average window lengths to identify buy and sell signals?
+
+<span style='color:green'>✔️ You avoid overfitting your data with specific moving average window lengths.</span>
+
+> **正解**
+Yes, by using a moving average ribbon, your strategy will be based on a whole range of window lengths which will help you avoid overfitting your strategy to two or three specific window lengths.
+
+- Using a moving average ribbon will give you many more buy and sell signals than using two moving average windows
+
+> **これを選択しないでください**
+Using an MA ribbon instead of selecting two MA window lengths should not have a significant effect on the number of buy and sell signal, if anything it might lead to fewer and better signals. Please review the video on Momentum Trading Strategies.
+
+<span style='color:green'>✔️ By looking at the entire "shape" of the ribbon rather than two specific window lengths, you can get a better quality trading signal.</span>
+
+> **正解**
+Yes, you can rank all of the moving averages and create a normalized score that should give you an improved trade signal.
+
+
+##### Wk 3.1.1.3 : 学習用教材 : Hurst Exponent and Trading Signals Derived from Market Time Series
+
+Hurst Exponent and Trading Signals Derived from Market Time Series
+If you would like to explore the Hurst coefficient as a trading signal, please have a look at “[Hurst Exponent and Trading Signals Derived from Market Time Series](https://www.scitepress.org/papers/2018/66670/66670.pdf)” by Petr Kroha and Miroslav Skoula (2018). They give a good survey of the theory behind Hurst and also create a “Moving Hurst” trading signal that they test against an MACD signal on NASDAQ and DAX data. They conclude that Moving Hurst is a better trade signal than MACD, but that it fails to make a profit when trading costs are factored in.
+
+#### Wk 3.1.2 : Build a trading model that uses momentum factors
+
+
+##### Wk 3.1.1.3 : 動画テスト - 
+
+
 
 <br><br>
 
