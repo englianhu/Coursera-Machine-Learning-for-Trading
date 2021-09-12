@@ -135,7 +135,7 @@ rm(pkgs)
 
 #### Wk 1.1.1 : Introduction to TensorFlow, Trading, ML
 
-##### Wk 1.1.1.2 : Welcome to Using Machine Learning in Trading and Finance
+##### Wk 1.1.1.2 : 学習用教材 : Welcome to Using Machine Learning in Trading and Finance
 
 > **Welcome to Using Machine Learning in Trading and Finance**
 We designed this course for finance, investment management and trading professionals. Machine learning and data science professionals who are interested in applying their skills to developing trading strategies can also benefit from this course. For those of you who are new to trading and investing,  we give a brief introduction to these areas at the beginning of Course 1 : Introduction to Trading, Machine Learning and GCP. It would be helpful to have a basic understanding of financial markets (equities, bonds, derivatives, market structure, and hedging. 
@@ -447,6 +447,49 @@ By opening the tool, you are agreeing to Qwiklabs' [Terms of Service](https://qw
 ## Wk 3
 
 ### Wk 3.1 : Build a Momentum-based Trading System
+
+#### Wk 3.1.1 : Identify momentum-based factors
+
+##### Wk 3.1.1.1 : 動画テスト - Introduction to Momentum Trading
+
+質問 1 : You can choose two moving average window lengths so that the crossovers will most closely match the optimal buy and sell points in your historical data. What is the weakness of this strategy?
+
+- You may end up with non-standard window lengths that are not widely used.
+
+- You end up using arbitrary window lengths to fit your data.
+
+<span style='color:green'>✔️ It is better to use a single moving average and choose the window length to create the crossover points that most closely match the optimal buy and sell points.</span>
+
+> **正解**
+This is a big weakness. Anyone can create a strategy that maximizes profit on a historical data set. The problem is that the strategy is only effective for the historical data and fails to perform well with unseen data. This is an example of overfitting your strategy.
+
+質問 2 : Which of the following are advantages of using moving average ribbons instead of selecting two moving average window lengths to identify buy and sell signals?
+
+<span style='color:green'>✔️ You avoid overfitting your data with specific moving average window lengths.</span>
+
+> **正解**
+Yes, by using a moving average ribbon, your strategy will be based on a whole range of window lengths which will help you avoid overfitting your strategy to two or three specific window lengths.
+
+- Using a moving average ribbon will give you many more buy and sell signals than using two moving average windows
+
+> **これを選択しないでください**
+Using an MA ribbon instead of selecting two MA window lengths should not have a significant effect on the number of buy and sell signal, if anything it might lead to fewer and better signals. Please review the video on Momentum Trading Strategies.
+
+<span style='color:green'>✔️ By looking at the entire "shape" of the ribbon rather than two specific window lengths, you can get a better quality trading signal.</span>
+
+> **正解**
+Yes, you can rank all of the moving averages and create a normalized score that should give you an improved trade signal.
+
+
+##### Wk 3.1.1.3 : 学習用教材 : Hurst Exponent and Trading Signals Derived from Market Time Series
+
+Hurst Exponent and Trading Signals Derived from Market Time Series
+If you would like to explore the Hurst coefficient as a trading signal, please have a look at “[Hurst Exponent and Trading Signals Derived from Market Time Series](https://www.scitepress.org/papers/2018/66670/66670.pdf)” by Petr Kroha and Miroslav Skoula (2018). They give a good survey of the theory behind Hurst and also create a “Moving Hurst” trading signal that they test against an MACD signal on NASDAQ and DAX data. They conclude that Moving Hurst is a better trade signal than MACD, but that it fails to make a profit when trading costs are factored in.
+
+#### Wk 3.1.2 : Build a trading model that uses momentum factors
+
+
+##### Wk 3.1.1.3 : 動画テスト - 
 
 
 
