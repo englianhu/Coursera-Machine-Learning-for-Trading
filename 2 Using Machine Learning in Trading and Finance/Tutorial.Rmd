@@ -484,7 +484,7 @@ Yes, you can rank all of the moving averages and create a normalized score that 
 ##### Wk 3.1.1.3 : 学習用教材 : Hurst Exponent and Trading Signals Derived from Market Time Series
 
 Hurst Exponent and Trading Signals Derived from Market Time Series
-If you would like to explore the Hurst coefficient as a trading signal, please have a look at “[Hurst Exponent and Trading Signals Derived from Market Time Series](https://www.scitepress.org/papers/2018/66670/66670.pdf)” by Petr Kroha and Miroslav Skoula (2018). They give a good survey of the theory behind Hurst and also create a “Moving Hurst” trading signal that they test against an MACD signal on NASDAQ and DAX data. They conclude that Moving Hurst is a better trade signal than MACD, but that it fails to make a profit when trading costs are factored in.
+If you would like to explore the Hurst coefficient as a trading signal, please have a look at “[Hurst Exponent and Trading Signals Derived from Market Time Series](https://www.scitepress.org/papers/2018/66670/66670.pdf)” by *Petr Kroha and Miroslav Skoula (2018)*. They give a good survey of the theory behind Hurst and also create a “Moving Hurst” trading signal that they test against an MACD signal on NASDAQ and DAX data. They conclude that Moving Hurst is a better trade signal than MACD, but that it fails to make a profit when trading costs are factored in.
 
 #### Wk 3.1.2 : Build a trading model that uses momentum factors
 
