@@ -8,6 +8,12 @@ Start Your Career in Machine Learning for Trading. Learn the machine learning te
 
 1) [Introduction to Trading, Machine Learning & GCP](https://www.coursera.org/learn/introduction-trading-machine-learning-gcp?specialization=machine-learning-trading)
 
+  - Wk 1 : Introduction to Trading with Machine Learning on Google Cloud
+  - Wk 2 : Supervised Learning with BigQuery ML
+  - Wk 3 : Time Series and ARIMA Modeling
+  - Wk 4 : Introduction to Neural Networks and Deep Learning
+
+
 2) [Using Machine Learning in Trading and Finance](https://www.coursera.org/learn/machine-learning-trading-finance)
 
   - Wk 1 : Introduction to Quantitative Trading and `TensorFlow`
@@ -90,6 +96,13 @@ Start Your Career in Machine Learning for Trading. Learn the machine learning te
       - Wk 4.4.3 : **テスト:** Pairs Trading Strategy concepts
       - Wk 4.4.4 : **未評価の外部ツール:** Optional Lab: Estimate parameters using Kalman Filters
 
+
 3) [Reinforcement Learning for Trading Strategies](https://www.coursera.org/learn/trading-strategies-reinforcement-learning?specialization=machine-learning-trading)
 
-[ニューヨーク金融研究所](https://www.nyif.com)
+  - Wk 1 : Introduction to Course and Reinforcement Learning
+  - Wk 2 : Neural Network Based Reinforcement Learning
+  - Wk 3 : Portfolio Optimization
+
+---
+
+<img src='figure/NYIF.jpeg' width='40'> [ニューヨーク金融研究所](https://www.nyif.com)

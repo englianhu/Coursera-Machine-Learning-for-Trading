@@ -1,6 +1,6 @@
 ---
-title: "<img src='figure/coursera.jpg' width='37'> <img src='figure/NYIF.jpeg' width='80'>"
-subtitle: "<span style='color:white; background-color:#4E79A7;'>Using Machine Learning in Trading and Finance</span>"
+title: "[Coursera Machine Learning for Trading 専門講座](https://www.coursera.org/specializations/machine-learning-trading?) <img src='figure/coursera.jpg' width='37' style='position:absolute;top:38px;right:82px;'> <img src='figure/NYIF.jpeg' width='80' style='position:absolute;top:38px;right:0px;'>"
+subtitle: "<span style='color:white; background-color:#4E79A7;'>Course 2 : Using Machine Learning in Trading and Finance</span>"
 author: "[®γσ, Lian Hu](https://englianhu.github.io) <img src='figure/quantitative trader 1.jpg' width='12'> <img src='figure/ENG.jpg' width='24'> ®"
 date: "`r lubridate::today('Asia/Tokyo')`"
 output:
@@ -667,17 +667,17 @@ Pairs trading is a strategy that attempts to take advantage of the divergence be
 
 In this lab, some of the concepts behind pairs trading will be explored by leveraging the [Auquan Toolbox](https://github.com/Auquan/auquan-toolbox-python), a Python library that provides tools for developing trading algorithms.
 
-This lab is based on the Auquan blog post [Pairs Trading using Data-Driven Techniques: Simple Trading Strategies Part 3]() ([origin](https://medium.com/auquan/pairs-trading-data-science-7dbedafcfe5a)).
+This lab is based on the Auquan blog post [Pairs Trading using Data-Driven Techniques: Simple Trading Strategies Part 3](https://raw.githubusercontent.com/englianhu/Coursera-Machine-Learning-for-Trading/92a93601bf2215d5f4746990d21ce4c4fa4c1f93/2%20Using%20Machine%20Learning%20in%20Trading%20and%20Finance/reference/medium-com-auquan-pairs-trading-data-science.pdf) ([origin](https://medium.com/auquan/pairs-trading-data-science-7dbedafcfe5a), [alternate](https://raw.githubusercontent.com/englianhu/Coursera-Machine-Learning-for-Trading/92a93601bf2215d5f4746990d21ce4c4fa4c1f93/2%20Using%20Machine%20Learning%20in%20Trading%20and%20Finance/reference/medium_com_auquan_pairs_trading_data_science.pdf)).
 
 **Tips for Course Labs**
 Get the most out of Coursera and Qwiklabs by trying our tips below.
 
-Avoid account confusion with private browsing
-Close this page and log back in to Coursera in Incognito mode before moving on. When you return to this course and lab instructions page, click Open Tool to continue.
+**Avoid account confusion with private browsing**
+**Close this page and log back in to Coursera in Incognito mode** before moving on. When you return to this course and lab instructions page, click Open Tool to continue.
 
 By using incognito mode, this ensures that you don't accidentally use your own Google account (including Gmail) while accessing the Google Cloud Console. This also prevents Qwiklabs from logging you out of your own Google accounts.
 
-Detailed instructions for using Incognito mode in Google Chrome are available here. Depending on your browser, Incognito mode might also be called Private Browsing or InPrivate Browsing.
+Detailed instructions for using Incognito mode in Google Chrome are [available here](https://support.google.com/chrome/answer/95464?co=GENIE.Platform%3DDesktop&hl=en). Depending on your browser, Incognito mode might also be called Private Browsing or InPrivate Browsing.
 
 To ensure lab completion is marked in Coursera:
 
@@ -686,8 +686,160 @@ To ensure lab completion is marked in Coursera:
 3. Click **End Lab** in Qwiklabs (click this only after you are ready to end the lab)
 4. Close the Qwiklabs browser window or tab.
 
-If you experience any issues and need support, submit a request here. By opening the tool, you are agreeing to Qwiklabs' Terms of Service.
+If you experience any issues and need support, [submit a request](https://goo.gl/LdYwdN) here. By opening the tool, you are agreeing to Qwiklabs' [Terms of Service](https://qwiklabs.com/terms_of_service).
 
+#### Wk 4.1.4 : Optimize momentum trading model to minimize costs
+
+##### Wk 4.1.4.2 : Kalman Filter Trading Applications
+
+質問 1 : Kalman estimators are different from moving averages in that they provide:
+
+- A weighted average of the historical prices with more recent prices weighted more heavily
+- A random walk estimate of the mean of the price distribution
+- <span style='color:green'>✔️ A variable length moving average of historical prices.</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, Kalman filters provide a random walk estimate which is used as the prediction of the next price. Moving averages are determined purely by historical prices.</span>
+
+##### Wk 4.1.4.3 : テスト : Pairs Trading Strategy concepts
+
+**Pairs Trading Strategy concepts** (最新の提出物の成績評価 100%)
+
+質問 1 : What is the advantage of trading a long-short pair of stocks versus a single stock? (1/1点)
+
+<span style='color:green'>✔️ You exposure to market risk is lower</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, by being long one stock and short another, you hedge at least part of your market risk or beta. This is why we size our long and short positions based on share price and each stocks beta. If you beta hedge your pair then you eliminate your expected market risk.</span>
+
+❌ You double your expected return
+
+><span style='color:#e99986'>**これを選択しないでください**
+Not quite. Return is a measure of profit divided by capital invested. With a long-short pair you would need trading capital to purchase your long side but not for the short side. Your return would not necessarily double and could be negative.</span>
+
+<span style='color:green'>✔️ You can lower your exposure to industry and sector risk</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, if you choose a pair of stocks from the same industry and same sub-sector you can reduce or eliminate your exposure to industry and sector risk. The more similar your long and short are, the more you reduce your risk and get closer to a return that is pure alpha.</span>
+
+質問 2 : A long-short pairs trade will have a positive return if: (1/1点)
+
+<span style='color:green'>✔️ The long side has a smaller negative return than the short side.</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, if the short side has a larger negative return than the long side the pair will have a positive return.</span>
+
+<span style='color:green'>✔️ The long side has a larger positive return than the short side.</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, if the long side outperforms the short side, a long-short pair will have a positive return.</span>
+
+❌ The long side has a smaller positive return than the short side
+
+><span style='color:#e99986'>**これを選択しないでください**
+This would result in the pair having an overall negative return as the long side is under-performing the short side.</span>
+
+❌ The long side has a larger negative return than the short side.
+
+><span style='color:#e99986'>**これを選択しないでください**
+This would result in the pair having an overall negative return as the long side is under-performing the short side.</span>
+
+質問 3 : Your fundamental and statistical research indicate that Oracle (ORCL) will outperform Salesforce (CRM) over the next quarter. Oracle is currently trading at $50 and has a beta of 1.15. Salesforce is trading at $165 and has a beta of 1.22. You have total trading capital of $10,000,000 and your risk management team say you can can only allocate 5% to each strategy. If you fully allocate to a long ORCL, short CRM pair, how many shares of CRM should you short if you want the strategy to be beta hedged? (1/1点)
+
+❌ 3,030 shares of Salesforce (CRM)
+
+><span style='color:#e99986'>**不正解**
+This would be the number of shares you would short if you wanted to dollar-hedge your long position in Oracle. 3,030 = $500,000/$165. Since Salesforce has a higher beta (1.22) than Oracle (1.15) this hedge would leave you short beta or market risk. Please have a look at the Implement a Pairs Strategy video and reconsider.</span>
+
+❌ 2,484 shares of Salesforce (CRM)
+
+><span style='color:#e99986'>**不正解**
+This would be the number of shares you would short if you wanted to dollar-hedge your long position in Oracle and divide by Salesforce's beta. 2,484 = ($500,000/$165)/1.22. Since Oracle has a higher beta (1.15) than the market,  this hedge would leave you long beta or market risk. Please have a look at the Implement a Pairs Strategy video and reconsider.</span>
+
+<span style='color:green'>✔️ 2,856 shares of Salesforce (CRM)</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, this would be the number of shares you would short if you wanted to beta-hedge your long position in Oracle. 2,856 = ($500,000*1.15/1.22)/$165.</span>
+
+質問 4 : When we ran a principal components analysis of the 68 stocks in the XLK Technology ETF, our first component, PC1 explained a little over 50% of the variation in returns for the XLK stocks. All of the stocks had positive loadings in PC1. Why did we chose a pair of stocks that had equal loadings in this dimension? (1/1点)
+
+❌ We wanted to create a long-short pair of to stocks with the same price/earnings ratio which is one way to measure the Value factor. 
+
+><span style='color:#e99986'>**不正解**
+Not quite. PC1 is not a proxy for the Value factor. It seems to measure the covariance of the returns with the overall return of the XLK ETF.</span>
+
+<span style='color:green'>✔️ We wanted to create a long-short pair of stocks that were hedged in their main exposure to variations in the overall returns of the XLK portfolio of stocks.</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, having a pair that is hedged in PC1 is as close as we can get to hedging out the risk exposure of our pair to volatility in the technology sector overall. PC1 loadings seem to measure the covariance of the each XLK stock's return with the overall return of the XLK ETF.</span>
+
+❌ We wanted to create a long-short pair of to stocks in the same industry sub-sector and equal loadings in PC1 indicate that the stocks are in the same sub-sector.
+
+><span style='color:#e99986'>**不正解**
+Not quite. PC1 does not distinguish between industry sub-sectors. PC1 loadings seem to measure the covariance of the each XLK stock's return with the overall return of the XLK ETF.</span>
+
+質問 5 : You have backtested 10 trading strategies using two distinct data sets representing different market regimes (down-trending with high volatility and up-trending with low volatility). From the 10 strategies you have identified the ones with the highest Sharpe ratio and highest return under each regime. 
+
+| Strategy | Return | PnL Vol | Sharpe Ratio |    Regime |
+|:--------:|:------:|:-------:|:------------:|:---------:|
+|        3 |    .08 |     .04 |         2.00 | Down/High |
+|        6 |    .05 |     .02 |         2.50 |    Up/Low |
+|        7 |    .10 |    .06  |         1.67 | Down/High |
+|       10 |    .06 |     .03 |         2.00 |    Up/Low |
+
+The strategies have about 70% pair-wise correlations with each other. Your analysis predicts a 75% chance that the market will be up-trending and low volatility and 25% chance that it will be down-trending and high volatility.  Which strategy or combination of strategies would you choose for implementation or further backtesting and why would you choose it or them? (1/1点)
+
+❌ Implement Strategy 6 because it has the highest Sharpe ratio and it is the most likely market regime.
+
+><span style='color:#e99986'>**これを選択しないでください**
+This would be your selection if you were looking for a single strategy with the highest expected Sharpe ratio but you should consider at least combining this strategy with another strategy that does well in a down-trending high volatility market. This way you would have your market regimes covered and you would get a diversification benefit since your strategies are not perfectly correlated.</span>
+
+❌ Implement a combination of Strategy 7 and 10 as this will give you the highest expected return regardless of the market regime.
+
+><span style='color:#e99986'>**これを選択しないでください**
+This would be your selection if you were looking for a combination of strategies with the highest expected return. Your risk would be reduced somewhat as the strategies have only a 70% correlation. However, you should consider combining these strategies with strategies 3 and 6 to see what the risk and return of different combinations would be.  To do this you would need to backtest different combinations of the four strategies. You should also consider backtesting all possible combinations of the 10 strategies on all three of your data sets if this is feasible.</span>
+
+❌ Implement a  combination of Strategy 3 and 6 as this will give you the highest expected Sharpe ratio regardless of the market regime.
+
+><span style='color:#e99986'>**これを選択しないでください**
+This would be your selection if you were looking for a combination of strategies with the highest expected Sharpe ratio. Your risk would be reduced somewhat as the strategies have only a 70% correlation. However, you should consider combining these strategies with strategies 7 and 10 to see what the risk and return of different combinations would be.  To do this you would need to backtest different combinations of the four strategies. You should also consider backtesting all possible combinations of the 10 strategies on all three of your data sets if this is feasible.</span>
+
+<span style='color:green'>✔️ Rather than looking at the performance of individual strategies, consider backtesting combinations of different strategies and determining the combination that gives you the highest Sharpe ratio.</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, you should consider backtesting all possible combinations of the 10 strategies on all three of your data sets if this is feasible. This will help you identify the optimal combination of strategies that will maximize your risk-adjusted return.</span>
+
+##### Wk 4.1.4.4 : Optional Lab: Estimate parameters using Kalman Filters
+
+**Optional Lab: Estimate parameters using Kalman Filters**
+
+Kalman filter is an algorithm that uses noisy observations of a system over time to estimate the parameters of the system (some of which are unobservable) and predict future observations. At each time step, it makes a prediction, takes in a measurement, and updates itself based on how the prediction and measurement compare.
+
+**Objectives**
+In this lab, you will:
+
+- Estimate Moving Average
+- Use Kalman Filters to calculate mean and covariance of our time series
+- Modify a Pairs trading function to make use of Kalman Filters
+
+**Tips for Course Labs**
+Get the most out of Coursera and Qwiklabs by trying our tips below.
+
+**Avoid account confusion with private browsing**
+**Close this page and log back in to Coursera in Incognito mode** before moving on. When you return to this course and lab instructions page, click Open Tool to continue.
+
+By using incognito mode, this ensures that you don't accidentally use your own Google account (including Gmail) while accessing the Google Cloud Console. This also prevents Qwiklabs from logging you out of your own Google accounts.
+
+Detailed instructions for using Incognito mode in Google Chrome are [available here](https://support.google.com/chrome/answer/95464?co=GENIE.Platform%3DDesktop&hl=en). Depending on your browser, Incognito mode might also be called Private Browsing or InPrivate Browsing.
+
+To ensure lab completion is marked in Coursera:
+
+1. Access each individual lab by clicking **Open Tool** in Coursera:
+2. Complete the lab in Qwiklabs.
+3. Click **End Lab** in Qwiklabs (click this only after you are ready to end the lab)
+4. Close the Qwiklabs browser window or tab.
+
+If you experience any issues and need support, [submit a request](https://goo.gl/LdYwdN) here. By opening the tool, you are agreeing to Qwiklabs' [Terms of Service](https://qwiklabs.com/terms_of_service).
 
 
 <br><br>

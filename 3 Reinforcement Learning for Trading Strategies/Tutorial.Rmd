@@ -1,0 +1,228 @@
+---
+title: "[Coursera Machine Learning for Trading 専門講座](https://www.coursera.org/specializations/machine-learning-trading?) <img src='figure/coursera.jpg' width='37' style='position:absolute;top:38px;right:82px;'> <img src='figure/NYIF.jpeg' width='80' style='position:absolute;top:38px;right:0px;'>"
+subtitle: "<span style='color:white; background-color:#4E79A7;'>Course 3 : Reinforcement Learning for Trading Strategies</span>"
+author: "[®γσ, Lian Hu](https://englianhu.github.io) <img src='figure/quantitative trader 1.jpg' width='12'> <img src='figure/ENG.jpg' width='24'> ®"
+date: "`r lubridate::today('Asia/Tokyo')`"
+output:
+  html_document: 
+    mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    number_sections: yes
+    toc: yes
+    toc_depth: 6
+    toc_float:
+      collapsed: yes
+      smooth_scroll: yes
+    code_folding: hide
+    css: CSSBackgrounds.css
+---
+
+<br>
+<span style='color:green'>**Theme Song**</span>
+<br>
+
+<audio src="music/小松拓也 - 不知道方向 Takuya Komatsu (原创歌曲) (Better Ownself).mp3" controls></audio>
+<br>
+
+<span style='color:yellow; background-color:red;'>**CHN**</span> : <span style='color:#4E79A7'>只要我还是真正的我，超越自己才有更好结果</span>
+
+<span style='color:red; background-color:blue;'>**ENG**</span> : <span style='color:#4E79A7'>As long as I am real, I can surpass myself to have better results</span>
+
+<span style='color:red; background-color:white;'>**JPN**</span> : <span style='color:#4E79A7'>私が本当の私であれば、自分を超えてこそ、より良い結果が得られます</span>
+
+<span style='color:blue; background-color:red;'>**T**</span><span style='color:white; background-color:red;'>**W**</span><span style='color:blue; background-color:red;'>**N**</span> : <span style='color:#4E79A7'>只要我還是真正的我，超越自己才有更好結果</span>
+
+<br>
+
+------
+
+# Setting
+
+## SCSS Setup
+
+<style>
+pre {
+  overflow-x: auto;
+}
+pre code {
+  word-wrap: normal;
+  white-space: pre;
+}
+.table-hover > tbody > tr:hover { 
+  background-color: #8D918D;
+}
+</style>
+
+```{r class.source='bg-success', class.output='bg-primary', message = FALSE, warning = FALSE}
+# install.packages("remotes")
+library('BBmisc', 'rmsfuns')
+#remotes::install_github("rstudio/sass")
+lib('sass')
+```
+
+```{scss class.source='bg-success', class.output='bg-primary'}
+/* https://stackoverflow.com/a/66029010/3806250 */
+h1 { color: #002C54; }
+h2 { color: #2F496E; }
+h3 { color: #375E97; }
+h4 { color: #556DAC; }
+h5 { color: #92AAC7; }
+
+/* ----------------------------------------------------------------- */
+/* https://gist.github.com/himynameisdave/c7a7ed14500d29e58149#file-broken-gradient-animation-less */
+.hover01 {
+  /* color: #FFD64D; */
+  background: linear-gradient(155deg, #EDAE01 0%, #FFEB94 100%);
+  transition: all 0.45s;
+  &:hover{
+    background: linear-gradient(155deg, #EDAE01 20%, #FFEB94 80%);
+    }
+  }
+
+.hover02 {
+  color: #FFD64D;
+  background: linear-gradient(155deg, #002C54 0%, #4CB5F5 100%);
+  transition: all 0.45s;
+  &:hover{
+    background: linear-gradient(155deg, #002C54 20%, #4CB5F5 80%);
+    }
+  }
+
+.hover03 {
+  color: #FFD64D;
+  background: linear-gradient(155deg, #A10115 0%, #FF3C5C 100%);
+  transition: all 0.45s;
+  &:hover{
+    background: linear-gradient(155deg, #A10115 20%, #FF3C5C 80%);
+    }
+  }
+```
+
+```{r global_options, class.source='hover01', class.output='hover02'}
+## https://stackoverflow.com/a/36846793/3806250
+options(width = 999)
+knitr::opts_chunk$set(class.source = 'hover01', class.output = 'hover02', class.error = 'hover03')
+```
+
+<br><br>
+
+## Setup
+
+```{r warning=FALSE, message=FALSE}
+if(!suppressPackageStartupMessages(require('BBmisc'))) {
+  install.packages('BBmisc', dependencies = TRUE, INSTALL_opts = '--no-lock')
+}
+suppressPackageStartupMessages(require('BBmisc'))
+# suppressPackageStartupMessages(require('rmsfuns'))
+
+pkgs <- c('devtools', 'knitr', 'kableExtra', 'tidyr', 
+          'readr', 'lubridate', 'reprex', 'magrittr', 
+          'timetk', 'plyr', 'dplyr', 'stringr', 
+          'tdplyr', 'tidyverse', 'formattable', 
+          'echarts4r', 'paletteer')
+
+suppressAll(lib(pkgs))
+# load_pkg(pkgs)
+
+## Set the timezone but not change the datetime
+Sys.setenv(TZ = 'Asia/Tokyo')
+## options(knitr.table.format = 'html') will set all kableExtra tables to be 'html', otherwise need to set the parameter on every single table.
+options(warn = -1, knitr.table.format = 'html')#, digits.secs = 6)
+
+## https://stackoverflow.com/questions/39417003/long-vectors-not-supported-yet-abnor-in-rmd-but-not-in-r-script
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)#, 
+                      #cache = TRUE, cache.lazy = FALSE)
+
+rm(pkgs)
+```
+
+<br><br>
+
+# Tutorial
+
+## Wk 1
+
+### Wk 1.1 : 
+
+#### Wk 1.1.1 : 
+
+##### Wk 1.1.1.2 : 学習用教材 : 
+
+#### Wk 1.1.2 : 
+
+##### Wk 1.1.2.1 : 動画中のテスト : 
+
+質問 1 : 
+
+<span style='color:green'>✔️ ......</span>
+
+><span style='color:#72e67e'>**正解**
+.......</span>
+
+❌ ...
+
+><span style='color:#e99986'>**これを選択しないでください**
+......</span>
+
+
+<br><br>
+
+# Appendix
+
+## Blooper
+
+## Documenting File Creation 
+
+It's useful to record some information about how your file was created.
+
+- File creation date: 2021-09-13
+- File latest updated date: `r today('Asia/Tokyo')`
+- `r R.version.string`
+- [**rmarkdown** package](https://github.com/rstudio/rmarkdown) version: `r packageVersion('rmarkdown')`
+- File version: 1.0.0
+- Author Profile: [®γσ, Eng Lian Hu](https://github.com/scibrokes/owner)
+- GitHub: [Source Code](https://github.com/englianhu/Coursera-Machine-Learning-for-Trading)
+- Additional session information:
+
+```{r info, warning=FALSE, error=TRUE, results='asis'}
+suppressMessages(require('dplyr', quietly = TRUE))
+suppressMessages(require('magrittr', quietly = TRUE))
+suppressMessages(require('formattable', quietly = TRUE))
+suppressMessages(require('knitr', quietly = TRUE))
+suppressMessages(require('kableExtra', quietly = TRUE))
+
+sys1 <- devtools::session_info()$platform %>% 
+  unlist %>% data.frame(Category = names(.), session_info = .)
+rownames(sys1) <- NULL
+
+sys2 <- data.frame(Sys.info()) %>% 
+  dplyr::mutate(Category = rownames(.)) %>% .[2:1]
+names(sys2)[2] <- c('Sys.info')
+rownames(sys2) <- NULL
+
+if (nrow(sys1) == 9 & nrow(sys2) == 8) {
+  sys2 %<>% rbind(., data.frame(
+  Category = 'Current time', 
+  Sys.info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾')))
+} else {
+  sys1 %<>% rbind(., data.frame(
+  Category = 'Current time', 
+  session_info = paste(as.character(lubridate::now('Asia/Tokyo')), 'JST🗾')))
+}
+
+sys <- cbind(sys1, sys2) %>% 
+  kbl(caption = 'Additional session information:') %>% 
+  kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive')) %>% 
+  row_spec(0, background = 'DimGrey', color = 'yellow') %>% 
+  column_spec(1, background = 'CornflowerBlue', color = 'red') %>% 
+  column_spec(2, background = 'grey', color = 'black') %>% 
+  column_spec(3, background = 'CornflowerBlue', color = 'blue') %>% 
+  column_spec(4, background = 'grey', color = 'white') %>% 
+  row_spec(9, bold = T, color = 'yellow', background = '#D7261E')
+
+rm(sys1, sys2)
+sys
+```
+
+## Reference
+
+<br><br>
