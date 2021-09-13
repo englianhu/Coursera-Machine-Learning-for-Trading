@@ -2,6 +2,8 @@
 
 ------
 
+[![Jekyll site CI](https://github.com/englianhu/Coursera-Machine-Learning-for-Trading/actions/workflows/jekyll.yml/badge.svg)](https://github.com/englianhu/Coursera-Machine-Learning-for-Trading/actions/workflows/jekyll.yml)
+
 # [Coursera Machine Learning for Trading 専門講座](https://www.coursera.org/specializations/machine-learning-trading?)
 
 Start Your Career in Machine Learning for Trading. Learn the machine learning techniques used in quantitative trading.
