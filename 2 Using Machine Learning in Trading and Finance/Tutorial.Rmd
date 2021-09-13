@@ -561,6 +561,135 @@ This is true. When you beta hedge you are not trying to hedge out the idiosyncra
 ><span style='color:#72e67e'>**正解**
 Correct. You need to short 1000*[1.2/0.8]*[250/150] = 2500 shares of MSFT to adjust for AAPL's higher price and beta.</span>
 
+##### Wk 4.1.1.2 : 動画中のテスト : Picking Pairs
+
+質問 1 : We are going to be choosing a pair of stocks from the technology sector ETF (XLK). It is unlikely that the stocks in the pair will have a negative correlation because: 
+
+- All of the stocks in the technology sector are in the same business and serve the same market so they should all move up and down together
+
+- <span style='color:green'>✔️ Stocks trading in the same market, such as U.S. large caps, tend to have price movements that are correlated with the overall market  </span>
+
+><span style='color:#72e67e'>**正解**
+Yes, the positive correlation of a stock with the overall markets is indicated by a positive beta. Almost all stocks have a positive beta as long as the historical period over which the beta is measured is long enough.</span>
+
+##### Wk 4.1.1.3 : 動画中のテスト : Picking Pairs with Clustering
+
+質問 1 : A cluster plot shows each of 68 stocks in a 2-dimensional plane.  This is an example of Dimensionality Reduction where Dimension 1 and 2 are chosen through a process called feature extraction. Dimension 1 and 2 are chosen so as to:
+
+- Create the maximum number of clusters
+- Minimize the distance between clusters and maximize the distance between the members of each cluster.
+- <span style='color:green'>✔️ Maximize the distance between clusters and minimize the distance between the members of each cluster.</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, this creates clusters whose members resemble each other the most and that are most distinct from other clusters.</span>
+
+質問 2 : Principal Components Analysis (PCA)  is a common dimensionality reduction method that uses feature extraction (synthetic dimensions) as opposed to feature selection (where selected dimensions are the most significant natural features of the data such as engine displacement and horsepower which we saw in the previous example). It is easier to think in terms of natural features but from a statistical perspective their main weaknesses are:
+
+<span style='color:green'>✔️ There are often many features so it is hard for one feature to be highly significant</span>
+
+><span style='color:#72e67e'>**正解**
+This is true as we saw with the automobile data containing 9 features</span>
+
+<span style='color:green'>✔️ The features often have a high degree of collinearity and so are highly correlated.</span>
+
+><span style='color:#72e67e'>**正解**
+Highly correlated independent variables make interpreting your estimates of the coefficients of regression difficult as it is impossible to change one variable without also changing another variable.  A good example of this is horsepower and engine displacement.</span>
+
+❌ Feature selection is subjective as opposed to PCA which is objective.
+
+><span style='color:#e99986'>**これを選択しないでください**
+This is not quite true. PCA is objective but so is feature selection when handled properly. Features can also be chosen based on their significance and their lack of correlation with other features.</span>
+
+#### Wk 4.1.2 : Trading Strategy
+
+##### Wk 4.1.2.1 : 動画中のテスト : How to implement a Pair Trading Strategy
+
+質問 1 : If you were going to enter a pairs trade with KLAC and ADSK, the decision about which stock to go long and which to short would depend on on your analysis of each company's exposure to Component 2. We talked before about how Component 1 was closely related to Beta and KLAC and ADSK have fairly similar Betas. Component 2 could be similar to the "Value" factor which explains returns based on the Price/Earnings ratios of stocks. In the XLK ETF, stocks with higher Component 2 loadings tend to be growth stocks and those with negative loadings tend to be value stocks. ADSK has a P/E ratio of about 275 versus KLAC's P/E of 25.
+
+To justify going long KLAC and short ADSK you would need to expect that:
+
+- The market will place a higher value on earnings growth potential than current earnings
+- P/E ratios will remain stable for KLAC and ADSK and earnings will increase by the same percentage for both companies
+- <span style='color:green'>✔️ The market will become more risk averse</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, even though less appetite for risk would result in lower prices for both KLAC and ADSK, the decrease in ADSK's price would probably be greater as most of its value is future growth potential which makes it a riskier stock despite it having a lower Beta. Beta is only a good measure of risk fr a diversified portfolio. A pairs trade trade hedges out market risk but not the individual risk of the stocks.</span>
+
+##### Wk 4.1.2.2 : 動画中のテスト : Evaluate Results of a Pair Trade
+
+質問 1 : In backtesting your trading strategy has a win percentage of 75%. The average win is $1500 and the average loss is $4000. Commissions and fees are $50. What is the expected profit or loss of your strategy?
+
+- $2550 loss
+- $125 profit
+- <span style='color:green'>✔️ $75 profit</span>
+
+><span style='color:#72e67e'>**正解**
+This is correct. Your expected profit is [$1500*0.75) - [$4000*0.25] -$50 = $1125 - $1000 - $50 = $75</span>
+
+質問 2 : You have backtested two trading strategies using 5 separate historical data sets. Both strategies require the investment of $10,000 in trading capital. Strategy 1 yielded an average return of $1500 over the 5 data sets with an average variation in the return of $300. Strategy 2 yielded an average return of $1600 with an average variation of $600. Which strategy would you choose for implementation and why would you choose it?
+
+- Strategy 1 because it has the lowest risk. The volatility of the expected return is $300/$1500 = 20%
+- Strategy 2 because it has the highest expected return = $1600/$10000 = 16%
+- <span style='color:green'>✔️ Strategy 1 because it has the highest risk-adjusted return</span>
+
+><span style='color:#72e67e'>**正解**
+This is correct.  In order to evaluate return you need to calculate the Sharpe Ratio or Information Ratio (IR) for the strategy. This is equal to the return divided by its volatility. Strategy 1 has an Sharpe Ratio  or IR =[$1500/$10000]/[$300/$1500] = 0.15/0.20 = 0.75 . Strategy 2 has an IR = [$1600/$10000]/[$600/$1600] = 0.16/0.40 = 0.43. The IR for strategy 1 is much higher while the return is only slightly lower than Strategy 2.</span>
+
+#### Wk 4.1.3 : Backtesting and Avoiding Overfitting
+
+##### Wk 4.1.3.1 : 動画中のテスト : Backtesting and Avoiding Overfitting
+
+質問 1 : We talked about dynamically updating the choice of stocks in the pair based on changes in the loadings of the Principal Components. We expected that the chosen pair of stocks, ADSK and KLAC would have a negative correlation with respect to Principal Component 2. What would happen if you reran the PCA on new data and the Componet 2 loadings for ADSK and KLAC were almost equal?
+
+- You would continue to trade the pair as long as it didn't hit the stop loss.
+- You would close out the trade and begin backtesting to develop new strategies.
+- <span style='color:green'>✔️ You would close out the trade and identify a new pair candidates based on updated loadings in Component 1 and 2.</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, it is important to close out trades that no longer have a basis for earning a positive expected return and redeploy your trading capital to a more promising pair.</span>
+
+##### Wk 4.1.3.2 : 動画中のテスト : Next Steps: Imrovements to your Pair Strategy
+
+質問 1 : Time of day and day of the week effects need to be factored into a trading strategy to account for changes in:
+
+- Market mood that causes prices to drop on Mondays and rise on Fridays
+- Volume as the first 15 minutes of the trading day tends to have lighter volume as the market is still finding its level.
+- <span style='color:green'>✔️ Volume and volatility</span>
+
+><span style='color:#72e67e'>**正解**
+Yes, volume is usually highest at the open and close of the market and also around the release of economic data and the announcement of quarterly earnings. Volatility is also higher (sometimes much higher) during these periods.</span>
+
+##### Wk 4.1.3.4 : Lab: Pairs Trading Strategy
+
+**Lab: Pairs Trading Strategy**
+
+Pairs trading is a strategy that attempts to take advantage of the divergence between assets whose ratio or difference in price is typically constant over time. One of the biggest advantages of pairs trading is that it enables traders to profit regardless of market conditions.
+
+In this lab, some of the concepts behind pairs trading will be explored by leveraging the [Auquan Toolbox](https://github.com/Auquan/auquan-toolbox-python), a Python library that provides tools for developing trading algorithms.
+
+This lab is based on the Auquan blog post [Pairs Trading using Data-Driven Techniques: Simple Trading Strategies Part 3]() ([origin](https://medium.com/auquan/pairs-trading-data-science-7dbedafcfe5a)).
+
+**Tips for Course Labs**
+Get the most out of Coursera and Qwiklabs by trying our tips below.
+
+Avoid account confusion with private browsing
+Close this page and log back in to Coursera in Incognito mode before moving on. When you return to this course and lab instructions page, click Open Tool to continue.
+
+By using incognito mode, this ensures that you don't accidentally use your own Google account (including Gmail) while accessing the Google Cloud Console. This also prevents Qwiklabs from logging you out of your own Google accounts.
+
+Detailed instructions for using Incognito mode in Google Chrome are available here. Depending on your browser, Incognito mode might also be called Private Browsing or InPrivate Browsing.
+
+To ensure lab completion is marked in Coursera:
+
+1. Access each individual lab by clicking **Open Tool** in Coursera:
+2. Complete the lab in Qwiklabs.
+3. Click **End Lab** in Qwiklabs (click this only after you are ready to end the lab)
+4. Close the Qwiklabs browser window or tab.
+
+If you experience any issues and need support, submit a request here. By opening the tool, you are agreeing to Qwiklabs' Terms of Service.
+
+
+
 <br><br>
 
 # Appendix
