@@ -21,6 +21,7 @@ output:
 <br>
 
 <audio src="music/小松拓也 - 不知道方向 Takuya Komatsu (原创歌曲) (Better Ownself).mp3" controls></audio>
+[小松拓也：Album 一万个为什么](https://muxiv.net/ja/artist/5848)
 <br>
 
 <span style='color:yellow; background-color:red;'>**CHN**</span> : <span style='color:#4E79A7'>只要我还是真正的我，超越自己才有更好结果</span>
