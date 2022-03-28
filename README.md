@@ -8,7 +8,15 @@
 
 Start Your Career in Machine Learning for Trading. Learn the machine learning techniques used in quantitative trading.
 
-1) [Introduction to Trading, Machine Learning & GCP](https://www.coursera.org/learn/introduction-trading-machine-learning-gcp?specialization=machine-learning-trading)
+## Index
+
+Specialization : [Machine Learning for Trading Specialization](https://www.coursera.org/specializations/machine-learning-trading)
+
+- Course 1 : [......](h)
+- Course 2 : [......]()
+- Course 3 : [......]()
+
+## Course 1 : [Introduction to Trading, Machine Learning & GCP](https://www.coursera.org/learn/introduction-trading-machine-learning-gcp?specialization=machine-learning-trading)
 
   - Wk 1 : Introduction to Trading with Machine Learning on Google Cloud
   - Wk 2 : Supervised Learning with BigQuery ML
@@ -16,7 +24,7 @@ Start Your Career in Machine Learning for Trading. Learn the machine learning te
   - Wk 4 : Introduction to Neural Networks and Deep Learning
 
 
-2) [Using Machine Learning in Trading and Finance](https://www.coursera.org/learn/machine-learning-trading-finance)
+## Course 2 :  [Using Machine Learning in Trading and Finance](https://www.coursera.org/learn/machine-learning-trading-finance)
 
   - Wk 1 : Introduction to Quantitative Trading and `TensorFlow`
     - Wk 1.1 : Introduction to `TensorFlow`, Trading, ML
@@ -99,11 +107,37 @@ Start Your Career in Machine Learning for Trading. Learn the machine learning te
       - Wk 4.4.4 : **未評価の外部ツール:** Optional Lab: Estimate parameters using Kalman Filters
 
 
-3) [Reinforcement Learning for Trading Strategies](https://www.coursera.org/learn/trading-strategies-reinforcement-learning?specialization=machine-learning-trading)
+## Course 3 : [Reinforcement Learning for Trading Strategies](https://www.coursera.org/learn/trading-strategies-reinforcement-learning?specialization=machine-learning-trading)
 
   - Wk 1 : Introduction to Course and Reinforcement Learning
   - Wk 2 : Neural Network Based Reinforcement Learning
   - Wk 3 : Portfolio Optimization
+
+## Miscellaneous
+
+There have a `RMarkdown` file and also a copy of `pdf` and `png` format certificate of accomplishment in every single course (folders inside repo).
+
+![Awarded on `08 June 2022`](.......png)
+
+Above `png` file and feel free to download [.......pdf](.......pdf).
+
+## Coursera Verified Certificate
+
+Certificate of Specialization : [......](https://www.coursera.org/account/accomplishments/specialization/......)
+
+- Cert 1 : [......](https://www.coursera.org/account/accomplishments/records/......)
+- Cert 2 : [......](https://www.coursera.org/account/accomplishments/records/......)
+- Cert 3 : [......](https://www.coursera.org/account/accomplishments/records/......)
+- Cert 4 : [......](https://www.coursera.org/account/accomplishments/records/......)
+- University : [New York Institute of Finance](https://www.nyif.com)
+
+## Reference
+
+- [ML for Trading - 2nd Edition (GitHub)](https://github.com/englianhu/machine-learning-for-trading) ❤️‍🔥
+- [算法交易中的机器学习系列（一）](https://zhuanlan.zhihu.com/p/262260494) ❤️‍🔥
+- [Machine Learning for Algorithmic Trading (Official)](https://ml4trading.io) ❤️‍🔥
+- [ML for Trading (Exchange)](https://exchange.ml4trading.io) ❤️‍🔥
+- []() ❤️‍🔥
 
 ---
 
