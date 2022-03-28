@@ -137,7 +137,7 @@ Certificate of Specialization : [......](https://www.coursera.org/account/accomp
 - [算法交易中的机器学习系列（一）](https://zhuanlan.zhihu.com/p/262260494) ❤️‍🔥
 - [Machine Learning for Algorithmic Trading (Official)](https://ml4trading.io) ❤️‍🔥
 - [ML for Trading (Exchange)](https://exchange.ml4trading.io) ❤️‍🔥
-- []() ❤️‍🔥
+- [Machine Learning for Algorithmic Trading (2nd Edition).pdf](https://raw.githubusercontent.com/englianhu/Coursera-Machine-Learning-for-Trading/8fdfbfdec4ffc277afe658dcbcd1846bea8b3e1c/reference/Machine%20Learning%20for%20Algorithmic%20Trading%20(2nd%20Edition).pdf) ❤️‍🔥
 
 ---
 
