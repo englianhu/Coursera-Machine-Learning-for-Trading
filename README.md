@@ -141,4 +141,4 @@ Certificate of Specialization : [......](https://www.coursera.org/account/accomp
 
 ---
 
-<img src='figure/NYIF.jpeg' width='40'> [ニューヨーク金融研究所](https://www.nyif.com)
+<img src='figure/NYIF.jpeg' width='40'> [纽约金融学院（ニューヨーク金融研究所）](https://www.nyif.com)
