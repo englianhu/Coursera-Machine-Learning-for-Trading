@@ -2,7 +2,8 @@
 
 ------
 
-[![Jekyll site CI](https://github.com/englianhu/Coursera-Machine-Learning-for-Trading/actions/workflows/jekyll.yml/badge.svg)](https://github.com/englianhu/Coursera-Machine-Learning-for-Trading/actions/workflows/jekyll.yml)
+[<img src='figure/RStudioCloud.png' height='20'>](https://rstudio.cloud) [<img src='figure/RStudioCom2.png' height='20'>](https://community.rstudio.com/new-topic?category=shiny&tags=shiny) [![](figure/shiny-badge.svg)](https://www.shinyapps.io)
+
 
 # [Coursera Machine Learning for Trading 専門講座](https://www.coursera.org/specializations/machine-learning-trading?)
 
@@ -117,7 +118,7 @@ Specialization : [Machine Learning for Trading Specialization](https://www.cours
 
 There have a `RMarkdown` file and also a copy of `pdf` and `png` format certificate of accomplishment in every single course (folders inside repo).
 
-![Awarded on `08 June 2022`](.......png)
+![Awarded on `08 June 2022`](.......png
 
 Above `png` file and feel free to download [.......pdf](.......pdf).
 
