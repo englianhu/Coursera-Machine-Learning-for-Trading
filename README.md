@@ -6,6 +6,8 @@
 
 ![](https://raw.githubusercontent.com/englianhu/Coursera-Machine-Learning-for-Trading/%E4%B8%96%E5%8D%9A%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E9%99%A2/%E6%96%87%E8%89%BA%E5%9D%8A%E5%9B%BE%E5%BA%93/%E6%97%B6%E5%85%89%E6%9C%BA%E5%99%A8%2001.gif)
 
+*The Time Machine 2002 (时光机器2002)*
+
 # [Coursera Machine Learning for Trading 専門講座](https://www.coursera.org/specializations/machine-learning-trading?)
 
 Start Your Career in Machine Learning for Trading. Learn the machine learning techniques used in quantitative trading.
