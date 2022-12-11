@@ -1,4 +1,4 @@
-<img src='文艺坊图库/coursera.jpg' width='74'> <img src='文艺坊图库/NYIF.jpeg' width='240'>
+<img src='文艺坊图库/coursera.jpg' width='74'> <img src='文艺坊图库/NYIF.png' width='240'>
 
 ------
 
@@ -147,4 +147,4 @@ Certificate of Specialization : [......](https://www.coursera.org/account/accomp
 
 ---
 
-<img src='文艺坊图库/NYIF.jpeg' width='40'> [纽约金融学院 — 华尔街的百年学府](https://www.nyif.com)
+<img src='文艺坊图库/NYIF.png' width='40'> [纽约金融学院 — 华尔街的百年学府](https://www.nyif.com)
