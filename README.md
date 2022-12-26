@@ -8,7 +8,8 @@
 
 *The Time Machine 2002 (时光机器 2002)*
 
-[悦诗风吟：蔡卓宜按脸秘方](https://www.douyin.com/user/MS4wLjABAAAAgnpmCWEdda8Wauzuo_MTsC-UjxjbRlUNUSkA55Ecot75KfHulPYUuYTXts0uzPS7?modal_id=7005994517736262949)
+- [悦诗风吟：蔡卓宜按脸秘方](https://www.douyin.com/user/MS4wLjABAAAAgnpmCWEdda8Wauzuo_MTsC-UjxjbRlUNUSkA55Ecot75KfHulPYUuYTXts0uzPS7?modal_id=7005994517736262949)
+- [揭秘全球量化投资之父詹姆斯·西蒙斯](https://open.toutiao.com/a7151346713263948325/?a_t=AHzmbrJ6CcFZ5Bb6e4ZHTBgS2B6kq493SPGCZe4PHKXZiDXJKraeg2A11zZZAtmTmUU2Crwk3&biz_log=B3fR4jutc96MzeDHNcmYzb7iUUzu2LBAjxBoiZrkX9i6umjKEKS1en7BdSPgmUjkZvFKq82g2wFtYxETJbGxufL&crypt=7198&device_brand=&dt=Redmi+7A&gy=cc1072953bd514b388e5175566825bac10a66f494272f91362dd82514b21141646040422457cc5f6e8f4ecfc878c2b5b96c47f93f42581c604dd05a3106057ee556885deee282f85349574cad79201da30d1b7d812a41fc14b0407c9d3df3eea652a365c00132c62b745a6666a271c4587d61f1eb6aa9bddafe4d34899df6a5c&item_id=7151346713263948325&label=ovm_tab_default_content_feed_1_5_v1&req_id=20221226203945D255F0A510D94B271843&utm_campaign=open&utm_medium=webview&utm_source=mi_llq_api&docid=7151346713263948325&cp=cn-toutiao&itemtype=news&version=2&mibusinessId=miuibrowser&env=production&category=news_finance&cateCode=%E8%B4%A2%E7%BB%8F)
 
 # [Coursera Machine Learning for Trading 专项课程](https://www.coursera.org/specializations/machine-learning-trading?)
 
