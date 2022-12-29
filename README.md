@@ -1,4 +1,5 @@
-<img src='文艺坊图库/coursera.jpg' width='74'> <img src='文艺坊图库/NYIF.png' width='240'>
+
+<img src='文艺坊图库/coursera.jpg' height='100'> <img src='文艺坊图库/NYIF.png' height='100'>
 
 ------
 
