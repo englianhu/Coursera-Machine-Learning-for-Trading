@@ -1,5 +1,5 @@
 
-<img src='诸子百家考工记/coursera.jpg' height='100'> <img src='诸子百家考工记/NYIF.png' height='100'>
+<img src='诸子百家考工记/coursera.png' height='100'> <img src='诸子百家考工记/NYIF.png' height='100'>
 
 ------
 
